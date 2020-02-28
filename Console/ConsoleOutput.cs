@@ -18,6 +18,7 @@ namespace Console
             this.height = height;
             this.model = model;
             this.lowTolerance = lowTolerance;
+            this.highTolerance = highTolerance;
         }
 
         public void Refresh(int time)
