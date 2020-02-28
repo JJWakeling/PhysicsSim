@@ -3,33 +3,35 @@
 namespace Console
 {
     /* TODO: this class needs:
-     * moving into a project just for console displays
      * splitting up so tolerances are dealt with by their own class
      */ 
      // N.b. because of use of System.Console.Clear, this class will only work for Windows-style terminals
     public class ConsoleOutput
     {
-        private readonly int width, height, lowTolerance, highTolerance;
+        private readonly double width, height, lowTolerance, highTolerance;
+        private readonly int screenWidth, screenHeight;
         private readonly IDensityModel model;
 
-        public ConsoleOutput(int width, int height, IDensityModel model, int lowTolerance, int highTolerance)
+        public ConsoleOutput(double width, double height, int screenWidth, int screenHeight, IDensityModel model, double lowTolerance, double highTolerance)
         {
             this.width = width;
             this.height = height;
             this.model = model;
+            this.screenWidth = screenWidth;
+            this.screenHeight = screenHeight;
             this.lowTolerance = lowTolerance;
             this.highTolerance = highTolerance;
         }
 
-        public void Refresh(int time)
+        public void Refresh(double time)
         {
             System.Console.Clear();
-            int[,] densities = model.Densities(time, 0, 0, width, height, width, height);
+            double[,] densities = model.Densities(time, 0, 0, width, height, screenWidth, screenHeight);
             for (int b = 0; b < densities.GetLength(0); b++)
             {
                 for (int a = 0; a < densities.GetLength(1); a++)
                 {
-                    int cell = densities[a, b];
+                    double cell = densities[a, b];
                     if (cell < this.lowTolerance)
                     {
                         System.Console.Write(" ");
