@@ -26,7 +26,7 @@ namespace Console
         public void Refresh(double time)
         {
             System.Console.Clear();
-            double[,] densities = model.Densities(time, 0, 0, width, height, screenWidth, screenHeight);
+            double[,] densities = model.Densities(time, -width/2, -height/2, width/2, height/2, screenWidth, screenHeight);
             for (int b = 0; b < densities.GetLength(0); b++)
             {
                 for (int a = 0; a < densities.GetLength(1); a++)
