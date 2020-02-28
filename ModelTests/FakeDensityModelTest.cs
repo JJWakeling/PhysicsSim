@@ -6,8 +6,9 @@ namespace ModelTests
     public class FakeDensityModelTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void Test_Densities_returns_array_with_GetLength1_equals_resolutionY()
         {
+            double[,] outcome = 
         }
     }
 }
