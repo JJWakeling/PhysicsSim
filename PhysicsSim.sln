@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhysicsSim", "PhysicsSim\Ph
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{06D3D6C7-A03D-479A-A49F-E5FDA93C220E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console", "Console\Console.csproj", "{D36914C8-1E23-4EF1-A0F6-54BA5B26B7CB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{06D3D6C7-A03D-479A-A49F-E5FDA93C220E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06D3D6C7-A03D-479A-A49F-E5FDA93C220E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06D3D6C7-A03D-479A-A49F-E5FDA93C220E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D36914C8-1E23-4EF1-A0F6-54BA5B26B7CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D36914C8-1E23-4EF1-A0F6-54BA5B26B7CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D36914C8-1E23-4EF1-A0F6-54BA5B26B7CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D36914C8-1E23-4EF1-A0F6-54BA5B26B7CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

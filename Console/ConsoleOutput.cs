@@ -1,13 +1,13 @@
-﻿using System;
-using Model;
+﻿using Model;
 
-namespace PhysicsSim
+namespace Console
 {
     /* TODO: this class needs:
      * moving into a project just for console displays
      * splitting up so tolerances are dealt with by their own class
      */ 
-    class ConsoleOutput
+     // N.b. because of use of System.Console.Clear, this class will only work for Windows-style terminals
+    public class ConsoleOutput
     {
         private readonly int width, height, lowTolerance, highTolerance;
         private readonly IDensityModel model;
@@ -22,7 +22,7 @@ namespace PhysicsSim
 
         public void Refresh(int time)
         {
-            Console.Clear();
+            System.Console.Clear();
             int[,] densities = model.Densities(time, 0, 0, width, height, width, height);
             for (int b = 0; b < densities.GetLength(0); b++)
             {
@@ -31,18 +31,18 @@ namespace PhysicsSim
                     int cell = densities[a, b];
                     if (cell < this.lowTolerance)
                     {
-                        Console.Write(" ");
+                        System.Console.Write(" ");
                     }
                     else if (cell < this.highTolerance)
                     {
-                        Console.Write("+");
+                        System.Console.Write("+");
                     }
                     else
                     {
-                        Console.Write("#");
+                        System.Console.Write("#");
                     }
                 }
-                Console.Write("\n");
+                System.Console.Write("\n");
             }
         }
     }
