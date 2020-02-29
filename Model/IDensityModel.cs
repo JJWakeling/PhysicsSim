@@ -16,7 +16,7 @@ namespace Model
 
         public double[,] Densities(double time, double minX, double minY, double maxX, double maxY, int resolutionX, int resolutionY)
         {
-            return new double[resolutionY, resolutionX];
+            return new double[resolutionX, resolutionY];
         }
     }
 }

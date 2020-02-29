@@ -27,9 +27,9 @@ namespace Console
         {
             System.Console.Clear();
             double[,] densities = model.Densities(time, -width/2, -height/2, width/2, height/2, screenWidth, screenHeight);
-            for (int b = 0; b < densities.GetLength(0); b++)
+            for (int b = 0; b < densities.GetLength(1); b++)
             {
-                for (int a = 0; a < densities.GetLength(1); a++)
+                for (int a = 0; a < densities.GetLength(0); a++)
                 {
                     double cell = densities[a, b];
                     if (cell < this.lowTolerance)
