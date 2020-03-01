@@ -8,7 +8,9 @@ namespace PhysicsSim
         static void Main(string[] args)
         {
             IDensityModel model = new FakeDensityModel();
-            ConsoleOutput output = new ConsoleOutput(100.0d, 100.0d, 100, 100, model, -1.0d, 1.0d);
+            IDensityCharacterMap characterMap = new FakeDensityCharacterMap();
+            IScreen screen = new Screen(50, 50, characterMap);
+            ConsoleOutput output = new ConsoleOutput(100.0d, 100.0d, screen, model);
             output.Refresh(0);
         }
     }

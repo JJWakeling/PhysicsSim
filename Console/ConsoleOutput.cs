@@ -8,45 +8,21 @@ namespace Console
      // N.b. because of use of System.Console.Clear, this class will only work for Windows-style terminals
     public class ConsoleOutput
     {
-        private readonly double width, height, lowTolerance, highTolerance;
-        private readonly int screenWidth, screenHeight;
+        private readonly double width, height;
         private readonly IDensityModel model;
+        private readonly IScreen screen;
 
-        public ConsoleOutput(double width, double height, int screenWidth, int screenHeight, IDensityModel model, double lowTolerance, double highTolerance)
+        public ConsoleOutput(double width, double height, IScreen screen, IDensityModel model)
         {
             this.width = width;
             this.height = height;
             this.model = model;
-            this.screenWidth = screenWidth;
-            this.screenHeight = screenHeight;
-            this.lowTolerance = lowTolerance;
-            this.highTolerance = highTolerance;
+            this.screen = screen;
         }
 
         public void Refresh(double time)
         {
-            System.Console.Clear();
-            double[,] densities = model.Densities(time, -width/2, -height/2, width/2, height/2, screenWidth, screenHeight);
-            for (int b = 0; b < densities.GetLength(1); b++)
-            {
-                for (int a = 0; a < densities.GetLength(0); a++)
-                {
-                    double cell = densities[a, b];
-                    if (cell < this.lowTolerance)
-                    {
-                        System.Console.Write(" ");
-                    }
-                    else if (cell < this.highTolerance)
-                    {
-                        System.Console.Write("+");
-                    }
-                    else
-                    {
-                        System.Console.Write("#");
-                    }
-                }
-                System.Console.Write("\n");
-            }
+            this.screen.Refresh(model, -width / 2, -height / 2, width / 2, height / 2, time);
         }
     }
 }

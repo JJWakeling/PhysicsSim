@@ -1,9 +1,9 @@
-﻿
+﻿using Model;
+
 namespace Console
 {
     public interface IScreen
     {
-        int Width();
-        int Height();
+        void Refresh(IDensityModel model, double minX, double minY, double maxX, double maxY, double time);
     }
 }
