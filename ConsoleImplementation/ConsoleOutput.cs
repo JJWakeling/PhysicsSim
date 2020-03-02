@@ -1,11 +1,8 @@
 ﻿using Model;
+using Console;
 
-namespace Console
+namespace ConsoleImplementation
 {
-    /* TODO: this class needs:
-     * splitting up so tolerances are dealt with by their own class
-     */ 
-     // N.b. because of use of System.Console.Clear, this class will only work for Windows-style terminals
     public class ConsoleOutput
     {
         private readonly double width, height;

@@ -1,5 +1,6 @@
 using Model;
 using Console;
+using ConsoleImplementation;
 
 namespace PhysicsSim
 {

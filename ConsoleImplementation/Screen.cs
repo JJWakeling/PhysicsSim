@@ -1,6 +1,7 @@
 ﻿using Model;
+using Console;
 
-namespace Console
+namespace ConsoleImplementation
 {
     public class Screen : IScreen
     {

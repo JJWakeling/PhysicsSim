@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D36914C8-1E23-4EF1-A0F6-54BA5B26B7CB}</ProjectGuid>
+    <ProjectGuid>{8F38302E-6B3B-4250-A538-52080BF28679}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Console</RootNamespace>
-    <AssemblyName>Console</AssemblyName>
+    <RootNamespace>ConsoleImplementation</RootNamespace>
+    <AssemblyName>ConsoleImplementation</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,11 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IDensityCharacterMap.cs" />
-    <Compile Include="IScreen.cs" />
+    <Compile Include="ConsoleOutput.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Screen.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Console\Console.csproj">
+      <Project>{d36914c8-1e23-4ef1-a0f6-54ba5b26b7cb}</Project>
+      <Name>Console</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{06d3d6c7-a03d-479a-a49f-e5fda93c220e}</Project>
       <Name>Model</Name>
