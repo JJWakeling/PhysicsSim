@@ -4,16 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{890FFD53-539D-466E-8F9B-325D70FB2587}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>PhysicsSim</RootNamespace>
-    <AssemblyName>PhysicsSim</AssemblyName>
+    <ProjectGuid>{A1B402C0-3358-46CD-A8E2-E6F677E5E991}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ControllerImplementation</RootNamespace>
+    <AssemblyName>ControllerImplementation</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -42,28 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Observer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ConsoleImplementation\ConsoleImplementation.csproj">
-      <Project>{8f38302e-6b3b-4250-a538-52080bf28679}</Project>
-      <Name>ConsoleImplementation</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Console\Console.csproj">
-      <Project>{d36914c8-1e23-4ef1-a0f6-54ba5b26b7cb}</Project>
-      <Name>Console</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Controller\Controller.csproj">
       <Project>{9c044663-9f65-4001-bdc9-d54ac76feb67}</Project>
       <Name>Controller</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Model\Model.csproj">
-      <Project>{06d3d6c7-a03d-479a-a49f-e5fda93c220e}</Project>
-      <Name>Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
