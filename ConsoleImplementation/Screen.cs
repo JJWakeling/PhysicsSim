@@ -24,7 +24,7 @@ namespace ConsoleImplementation
             {
                 for (int a = 0; a < densities.GetLength(0); a++)
                 {
-                    System.Console.Write(characterMap.Map(densities[a, b]));
+                    System.Console.Write(characterMap.Character(densities[a, b]));
                 }
                 System.Console.Write("\n");
             }

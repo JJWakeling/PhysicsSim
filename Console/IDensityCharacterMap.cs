@@ -3,12 +3,12 @@ namespace Console
 {
     public interface IDensityCharacterMap
     {
-        char Map(double density);
+        char Character(double density);
     }
 
     public class FakeDensityCharacterMap : IDensityCharacterMap
     {
-        public char Map(double density)
+        public char Character(double density)
         {
             return '+';
         }
