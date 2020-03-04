@@ -2,6 +2,7 @@ using Model;
 using Console;
 using ConsoleImplementation;
 using Controller;
+using ControllerImplementation;
 
 namespace PhysicsSim
 {
@@ -11,8 +12,8 @@ namespace PhysicsSim
         {
             IDensityModel model = new FakeDensityModel();
             IDensityCharacterMap characterMap = new FakeDensityCharacterMap();
-            IScreen screen = new Screen(50, 50, characterMap);
-            IObserver observer = new FakeObserver(100.0d, 100.0d, screen, model);
+            IScreen screen = new FixedSizeWindowsConsole(50, 50, characterMap);
+            IObserver observer = new FixedRectangleObserver(screen, model, 0.0d, 0.0d, 50.0d, 50.0d);
             observer.Run();
         }
     }

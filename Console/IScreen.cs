@@ -1,9 +1,11 @@
-﻿using Model;
-
+﻿
 namespace Console
 {
     public interface IScreen
     {
-        void Refresh(IDensityModel model, double minX, double minY, double maxX, double maxY, double time);
+        int Width();
+        int Height();
+        void OverwritePixel(int x, int y, double value);
+        void Refresh();
     }
 }

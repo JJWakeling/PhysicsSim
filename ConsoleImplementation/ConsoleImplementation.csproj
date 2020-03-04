@@ -36,16 +36,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Screen.cs" />
+    <Compile Include="FixedSizeWindowsConsole.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Console\Console.csproj">
       <Project>{d36914c8-1e23-4ef1-a0f6-54ba5b26b7cb}</Project>
       <Name>Console</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Model\Model.csproj">
-      <Project>{06d3d6c7-a03d-479a-a49f-e5fda93c220e}</Project>
-      <Name>Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
