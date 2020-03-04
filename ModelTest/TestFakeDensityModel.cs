@@ -7,8 +7,7 @@ namespace Tests
     public class TestFakeDensityModel
     {
         private FakeDensityModel model;
-
-        // Arrange
+        
         [SetUp]
         public void Setup()
         {
