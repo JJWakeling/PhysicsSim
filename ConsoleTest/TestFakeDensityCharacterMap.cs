@@ -11,7 +11,7 @@ namespace Tests
         [SetUp]
         public void Setup()
         {
-            this.map = new FakeDensityCharacterMap();
+            map = new FakeDensityCharacterMap();
         }
 
         [Test]
