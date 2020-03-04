@@ -1,4 +1,5 @@
 using Model;
+using ModelImplementation;
 using Console;
 using ConsoleImplementation;
 using Controller;
@@ -13,7 +14,9 @@ namespace PhysicsSim
             IDensityModel model = new FakeDensityModel();
             IDensityCharacterMap characterMap = new FakeDensityCharacterMap();
             IScreen screen = new FixedSizeWindowsConsole(50, 50, characterMap);
-            IObserver observer = new FixedRectangleObserver(screen, model, 0.0d, 0.0d, 50.0d, 50.0d);
+            IRectangle viewBoundary = new Rectangle(0.0d, 0.0d, 50.0d, 50.0d);
+            IObserver observer = new FixedRectangleObserver(screen, model, viewBoundary);
+
             observer.Run();
         }
     }

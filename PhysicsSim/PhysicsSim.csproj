@@ -58,6 +58,10 @@
       <Project>{9c044663-9f65-4001-bdc9-d54ac76feb67}</Project>
       <Name>Controller</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ModelImplementation\ModelImplementation.csproj">
+      <Project>{ee4d44ff-d1cb-4609-9aec-d289fbfcff83}</Project>
+      <Name>ModelImplementation</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{06d3d6c7-a03d-479a-a49f-e5fda93c220e}</Project>
       <Name>Model</Name>

@@ -8,30 +8,24 @@ namespace ControllerImplementation
     {
         private readonly IDensityModel model;
         private readonly IScreen screen;
-        private readonly double minX, maxX, minY, maxY;
+        private readonly IRectangle viewBoundary;
 
-        public FixedRectangleObserver(IScreen screen, IDensityModel model, double minX, double maxX, double minY, double maxY)
+        public FixedRectangleObserver(IScreen screen, IDensityModel model, IRectangle viewBoundary)
         {
             this.model = model;
             this.screen = screen;
-            this.minX = minX;
-            this.maxX = maxX;
-            this.minY = minY;
-            this.maxY = maxY;
+            this.viewBoundary = viewBoundary;
         }
 
         public void Run()
         {
-            int screenWidth = screen.Width();
-            int screenHeight = screen.Height();
-
-            double pixelWidth = (maxX - minX) / (double)screenWidth;
-            double pixelHeight = (maxY - minY) / (double)screenHeight;
-            for (int i = 0; i < screenWidth; i++)
+            IRectangle[] rows = viewBoundary.WidthwisePartition(screen.Width());
+            for (int i = 0; i < rows.Length; i++)
             {
-                for (int j = 0; j < screenHeight; j++)
+                IRectangle[] pixels = rows[i].HeightwisePartition(screen.Height());
+                for (int j = 0; j < pixels.Length; j++)
                 {
-                    screen.OverwritePixel(i, j, model.Density(0, i * pixelWidth, j * pixelHeight, (i + 1) * pixelWidth, (j + 1) * pixelHeight));
+                    screen.OverwritePixel(i, j, model.Density(0, pixels[j]));
                 }
             }
 

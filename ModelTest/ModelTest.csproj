@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ModelImplementation\ModelImplementation.csproj" />
     <ProjectReference Include="..\Model\Model.csproj" />
   </ItemGroup>
 

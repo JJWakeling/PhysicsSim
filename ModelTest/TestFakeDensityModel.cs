@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using Model;
+using ModelImplementation;
 
 namespace Tests
 {
@@ -17,7 +18,8 @@ namespace Tests
         [Test]
         public void Test_Density_returns_zero()
         {
-            Assert.AreEqual(0.0d, model.Density(0, 0.0d, 0.0d, 1.0d, 1.0d));
+            IRectangle rectangle = new Rectangle(0.0d, 1.0d, 0.0d, 1.0d);
+            Assert.AreEqual(0.0d, model.Density(0.0d, rectangle));
         }
     }
 }
