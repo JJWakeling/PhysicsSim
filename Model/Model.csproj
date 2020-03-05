@@ -35,6 +35,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IDensityModel.cs" />
+    <Compile Include="IParticle.cs" />
+    <Compile Include="IPosition.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="IRectangle.cs" />
   </ItemGroup>

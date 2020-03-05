@@ -14,6 +14,11 @@ namespace ModelImplementation
             this.maxY = maxY;
         }
 
+        public bool Contains(IPosition position)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public IRectangle[] HeightwisePartition(int partitions)
         {
             double partitionHeight = (maxY - minY) / (double)partitions;

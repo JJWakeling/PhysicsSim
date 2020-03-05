@@ -6,5 +6,7 @@ namespace Model
         IRectangle[] WidthwisePartition(int partitions);
 
         IRectangle[] HeightwisePartition(int partitions);
+
+        bool Contains(IPosition position);
     }
 }
