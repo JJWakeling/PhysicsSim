@@ -12,7 +12,7 @@ namespace ModelImplementationTest
         [SetUp]
         public void SetUp()
         {
-            coordinates = new double[] {42.0d, 33.3d};
+            coordinates = new double[] { 42.0d, 33.3d };
             position = new FakePosition(coordinates);
         }
 
@@ -25,7 +25,9 @@ namespace ModelImplementationTest
         [Test]
         public void Test_Equals_with_IPosition_at_same_coordinates_returns_true()
         {
-
+            Assert.IsTrue(position.Equals(new FakePosition(new double[] { 42.0d, 33.3d })));
         }
+
+        // TODO: check that using == and Assert.AreEqual also work here
     }
 }
