@@ -23,19 +23,19 @@ namespace ModelImplementationTest
         [Test]
         public void Test_Density_with_rectangle_not_containing_particle_returns_zero()
         {
-
+            Assert.AreEqual(0.0d, model.Density(0.0d, new Rectangle(0.0d, 1.0d, 0.0d, 1.0d)));
         }
 
         [Test]
         public void Test_Density_with_rectangle_containing_single_particle_returns_one()
         {
-
+            Assert.AreEqual(1.0d, model.Density(0.0d, new Rectangle(11.0d, 13.0d, 5.0d, 6.0d)));
         }
 
         [Test]
         public void Test_Density_with_rectangle_containing_two_particles_returns_two()
         {
-
+            Assert.AreEqual(2.0d, model.Density(0.0d, new Rectangle(11.0d, 13.0d, 5.0d, 9.0d)));
         }
     }
 }
