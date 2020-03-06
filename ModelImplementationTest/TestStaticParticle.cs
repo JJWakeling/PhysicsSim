@@ -20,7 +20,7 @@ namespace ModelImplementationTest
         [Test]
         public void Test_Position_returns_equivalent_IPosition_to_constructor_argument()
         {
-
+            Assert.IsTrue(particle.Position(0.0d).Equals(position));
         }
     }
 }
