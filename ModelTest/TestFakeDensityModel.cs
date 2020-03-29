@@ -2,7 +2,7 @@ using NUnit.Framework;
 using Model;
 using ModelImplementation;
 
-namespace Tests
+namespace ModelTest
 {
     [TestFixture]
     public class TestFakeDensityModel

@@ -2,7 +2,7 @@ using NUnit.Framework;
 using Console;
 using ConsoleImplementation;
 
-namespace Tests
+namespace ConsoleImplementationTest
 {
     [TestFixture]
     public class TestFixedSizeWindowsConsole

@@ -4,6 +4,7 @@ using NUnit.Framework;
 namespace ConsoleImplementationTest
 {
     [TestFixture]
+    [Ignore("tests are blank")]
     public class TestDensityCharacterMap
     {
         [SetUp]

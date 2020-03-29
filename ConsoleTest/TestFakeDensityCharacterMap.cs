@@ -1,7 +1,7 @@
 using NUnit.Framework;
 using Console;
 
-namespace Tests
+namespace ConsoleTest
 {
     [TestFixture]
     public class TestFakeDensityCharacterMap
