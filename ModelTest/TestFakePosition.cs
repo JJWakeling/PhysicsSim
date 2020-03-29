@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using Model;
 
-namespace ModelImplementationTest
+namespace ModelTest
 {
     [TestFixture]
     public class TestFakePosition

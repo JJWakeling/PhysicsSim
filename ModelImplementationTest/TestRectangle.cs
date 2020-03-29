@@ -2,7 +2,7 @@ using NUnit.Framework;
 using ModelImplementation;
 using Model;
 
-namespace Tests
+namespace ModelImplementationTest
 {
     [TestFixture]
     public class TestRectangle
