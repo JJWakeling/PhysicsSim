@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using ModelImplementation;
 using Model;
+using System;
 
 namespace ModelImplementationTest
 {
@@ -25,6 +26,24 @@ namespace ModelImplementationTest
         public void Test_HeightwisePartition_returns_array_of_length_specified()
         {
             Assert.AreEqual(8, rectangle.HeightwisePartition(8).Length);
+        }
+
+        [Test]
+        public void Test_Contains_throws_exception_when_called_with_too_many_dimension()
+        {
+            Assert.Throws<Exception>(() =>
+            {
+                    rectangle.Contains(new FakePosition(new double[] { 0.5d, 0.5d, 0.5d }));
+            });
+        }
+
+        [Test]
+        public void Test_Contains_throws_exception_when_called_with_too_few_dimensions()
+        {
+            Assert.Throws<Exception>(() =>
+            {
+                rectangle.Contains(new FakePosition(new double[] { 0.5d }));
+            });
         }
 
         [Test]

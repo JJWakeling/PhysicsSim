@@ -1,4 +1,5 @@
 ﻿using Model;
+using System;
 
 namespace ModelImplementation
 {
@@ -16,7 +17,16 @@ namespace ModelImplementation
 
         public bool Contains(IPosition position)
         {
-            throw new System.NotImplementedException();
+            double[] coordinates = position.CanonicalCoordinates();
+            if (coordinates.Length != 2)
+            {
+                throw new Exception("cannot determine whether a point in 3D space lies in a 2D rectangle");
+            }
+
+            return minX <= coordinates[0]
+                && coordinates[0] < maxX
+                && minY <= coordinates[1]
+                && coordinates[1] < maxY;
         }
 
         public IRectangle[] HeightwisePartition(int partitions)
