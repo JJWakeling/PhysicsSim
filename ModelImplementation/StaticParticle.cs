@@ -13,7 +13,7 @@ namespace ModelImplementation
 
         public IPosition Position(double time)
         {
-            throw new System.NotImplementedException();
+            return position;
         }
     }
 }
