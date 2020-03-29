@@ -35,6 +35,7 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DensityCharacterMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FixedSizeWindowsConsole.cs" />
   </ItemGroup>
