@@ -13,7 +13,16 @@ namespace ModelImplementation
 
         public double Density(double time, IRectangle boundingBox)
         {
-            throw new System.NotImplementedException();
+            double density = 0.0d;
+            foreach (IParticle particle in particles)
+            {
+                if (boundingBox.Contains(particle.Position(time)))
+                {
+                    density += 1.0d;
+                }
+            }
+
+            return density;
         }
     }
 }
