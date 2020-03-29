@@ -28,6 +28,24 @@ namespace ModelImplementationTest
             Assert.IsTrue(position.Equals(new FakePosition(new double[] { 42.0d, 33.3d })));
         }
 
+        [Test]
+        public void Test_Equals_with_IPosition_at_different_coordinates_returns_false()
+        {
+            Assert.IsFalse(position.Equals(new FakePosition(new double[] { 1.0d, 1.0d })));
+        }
+
+        [Test]
+        public void Test_Equals_with_IPosition_of_greater_dimension_returns_false()
+        {
+            Assert.IsFalse(position.Equals(new FakePosition(new double[] { 42.0d, 33.3d, 4.0d })));
+        }
+
+        [Test]
+        public void Test_Equals_with_IPosition_of_smaller_dimension_returns_false()
+        {
+            Assert.IsFalse(position.Equals(new FakePosition(new double[] { 42.0d })));
+        }
+
         // TODO: check that using == and Assert.AreEqual also work here
     }
 }
